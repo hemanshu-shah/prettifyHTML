@@ -2,7 +2,7 @@
 	/*These are the default options we use internally, which can be overridden by passign option parameter*/
 	var defaults = {
 		tab: '  ', //String to use as character it can be tab character or multiple spaces
-		maxCols: 100, //Max number of character used to break the element in multiple lines in case element has only text
+		maxCols: 120, //Max number of character used to break the element in multiple lines in case element has only text
 		excludeAttributes: ['^ng-'], //attributes matching given patterns will not be included in the output
 		excludeElements: ['#comment'], //elements matching given patterns will not be included in the output
 	}
@@ -22,9 +22,11 @@
 
 	var getPrettyHTML = function (elements) {
 		var html = '';
-		jQuery.each(elements, function (index, element) {
-			html += getElementHTML(element, 0);
-		})
+		if (elements) {
+			jQuery.each(elements, function (index, element) {
+				html += getElementHTML(element, 0);
+			})
+		}
 		return html.trim();
 	};
 
