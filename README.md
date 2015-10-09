@@ -1,4 +1,4 @@
-# prettyHTML
+# prettifyHTML
 
 This jQuery plugin generates pretty HTML, which is well indented from source element and appends that to destination element as html encoded text, do dispaly it to the user.
 
